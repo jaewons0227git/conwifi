@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Connected</title>
+    <style>
+        /* 기본 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #2d3436;
+        }
+
+        .card {
+            text-align: center;
+            background: #ffffff;
+            padding: 60px 30px;
+            border-radius: 40px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            /* 모바일에서 꽉 차지 않도록 너비 설정 */
+            width: 80%;
+            max-width: 320px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 와이파이 아이콘 (SVG) */
+        .wifi-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 24px;
+            fill: #007AFF; 
+            animation: wifi-blink 2s infinite ease-in-out;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.8px;
+            word-break: keep-all; /* 한글 단어 끊김 방지 */
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #636e72;
+            line-height: 1.6;
+            word-break: keep-all;
+        }
+
+        /* 📱 모바일 전용 스타일 (화면 너비 480px 이하) */
+        @media (max-width: 480px) {
+            .card {
+                padding: 45px 25px; /* 내부 여백 축소 */
+                width: 75%; /* 화면 대비 카드 너비 조정 */
+            }
+
+            .wifi-icon {
+                width: 40px; /* 아이콘 크기 축소 */
+                height: 40px;
+                margin-bottom: 18px;
+            }
+
+            h1 {
+                font-size: 1.15rem; /* 제목 크기 축소 */
+            }
+
+            p {
+                font-size: 0.85rem; /* 본문 크기 축소 */
+            }
+        }
+
+        /* 애니메이션 */
+        @keyframes wifi-blink {
+            0%, 100% { opacity: 1; filter: drop-shadow(0 0 0px rgba(0,122,255,0)); }
+            50% { opacity: 0.5; filter: drop-shadow(0 0 8px rgba(0,122,255,0.3)); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <svg class="wifi-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-4c-2.48 0-4.73 1.01-6.36 2.64l1.42 1.42C8.28 16.84 10.03 16 12 16s3.72.84 4.94 2.06l1.42-1.42C16.73 15.01 14.48 14 12 14zm0-4c-3.59 0-6.83 1.46-9.19 3.81l1.42 1.42C6.12 13.33 8.91 12 12 12s5.88 1.33 7.77 3.23l1.42-1.42C18.83 11.46 15.59 10 12 10zm0-4C7.31 6 3.07 7.95 0 11.12l1.42 1.42C4.14 9.8 7.89 8 12 8s7.86 1.8 10.58 4.54L24 11.12C20.93 7.95 16.69 6 12 6z"/>
+        </svg>
+
+        <h1>NetService에 연결됨</h1>
+        <p>인터넷에 연결되었습니다.<br><br>보안정책으로 인해 인터넷<br>사용기록이 저장됩니다.</p>
+    </div>
+
+</body>
+</html>
